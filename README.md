@@ -75,5 +75,5 @@ Open a new terminal, source the workspace, and run the logic node:
  source install/setup.bash
    ros2 launch panda_pick_place demo_pick_and_place.launch.py
 ```
-### Demostration video link
+### Link of Demostration video pick and place experiment
 https://drive.google.com/drive/folders/1XpE1SSHfntVLCMmfpiRcCA4rlx2zxPiy?usp=share_link
