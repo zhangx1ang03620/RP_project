@@ -5,7 +5,6 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from moveit_configs_utils import MoveItConfigsBuilder
 
-
 def generate_launch_description():
     # -- Panda MoveIt 2 config --
     moveit_config = (
@@ -23,9 +22,11 @@ def generate_launch_description():
     )
 
     # -- RViz --
+   
     rviz_config_file = os.path.join(
         get_package_share_directory("moveit2_tutorials"), "launch", "mtc.rviz"
     )
+    
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
@@ -74,13 +75,7 @@ def generate_launch_description():
             )
         )
 
-    # -- MTC tutorial node --
-    mtc_tutorial_node = Node(
-        package="mtc_tutorial",
-        executable="mtc_tutorial",
-        output="screen",
-        parameters=[moveit_config.to_dict()],
-    )
+    
 
     return LaunchDescription([
         static_tf,
@@ -88,6 +83,5 @@ def generate_launch_description():
         ros2_control_node,
         run_move_group_node,
         rviz_node,
-        mtc_tutorial_node,
         *load_controllers,
     ])
