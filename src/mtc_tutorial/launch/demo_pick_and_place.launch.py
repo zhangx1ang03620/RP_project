@@ -12,7 +12,7 @@ def generate_launch_description():
 
     # 启动 MTC Demo 节点
     pick_place_demo = Node(
-        package="mtc_tutorial",
+        package="panda_pick_place",
         executable="mtc_tutorial",
         output="screen",
         parameters=[moveit_config],
