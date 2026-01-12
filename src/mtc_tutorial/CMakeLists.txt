@@ -17,7 +17,7 @@ find_package(moveit_task_constructor_msgs REQUIRED)
 # ------------------------------------------------------------------------------
 # 2. 可执行文件
 # ------------------------------------------------------------------------------
-add_executable(mtc_tutorial src/mtc_tutorial.cpp)
+add_executable(pick_place_node src/mtc_tutorial.cpp)
 ament_target_dependencies(mtc_tutorial
   rclcpp
   moveit_ros_planning_interface
