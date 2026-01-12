@@ -37,10 +37,10 @@ Ensure you have ROS 2 and MoveIt 2 installed.
    git clone <YOUR_GITHUB_LINK_HERE>
 
 2.Install dependencies:
-```bash
-cd ~/ros2_ws
-rosdep update
-rosdep install --from-paths src --ignore-src -y
+  ```bash
+  cd ~/ros2_ws
+  rosdep update
+  rosdep install --from-paths src --ignore-src -y
 
 3.Build the package:
 ```bash
