@@ -41,7 +41,7 @@ Ensure you have ROS 2 and MoveIt 2 installed.
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
    # Clone this repository into src
-   git clone <YOUR_GITHUB_LINK_HERE>
+   git clone <https://github.com/zhangx1ang03620/RP_project.git>
    ```
 
 2. Install dependencies:
