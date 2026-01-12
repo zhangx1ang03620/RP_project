@@ -31,3 +31,10 @@ Ensure you have ROS 2 Jazzy and MoveIt 2 installed.
 cd ~/ros2_ws
 colcon build --packages-select mtc
 source install/setup.bash
+
+### Run
+Step 1: Launch Environment & MoveIt
+ros2 launch mtc_tutorial mtc_demo.launch.py
+
+Step 2: Execute Pick and Place Task
+ros2 launch mtc_tutorial demo_pick_and_place.launch.py
