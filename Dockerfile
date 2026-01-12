@@ -1,37 +1,35 @@
-# 使用 ROS 2 Humble 基础镜像
-FROM osrf/ros:humble-desktop
+# Jazzy 的基础镜像
+FROM osrf/ros:jazzy-desktop
 
-# 设置环境变量
-ENV ROS_DISTRO=humble
+# 设置非交互前端
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 安装 MoveIt 2 和 Panda 相关的依赖
+# 安装项目所需的依赖库 (注意：包名里的 humble 都要改成 jazzy)
 RUN apt-get update && apt-get install -y \
-    ros-humble-moveit \
-    ros-humble-moveit-task-constructor-core \
-    ros-humble-moveit-task-constructor-planning \
-    ros-humble-moveit-task-constructor-loader \
-    ros-humble-moveit-task-constructor-visualization \
-    ros-humble-ros2-control \
-    ros-humble-ros2-controllers \
-    ros-humble-xacro \
+    ros-jazzy-moveit \
+    ros-jazzy-moveit-task-constructor-core \
+    ros-jazzy-moveit-task-constructor-planning \
+    ros-jazzy-moveit-task-constructor-loader \
+    ros-jazzy-moveit-task-constructor-visualization \
+    ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
+    ros-jazzy-moveit-resources-panda-moveit-config \
     git \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# 创建工作空间
-WORKDIR /root/ros2_ws
+# 安装代码质量工具
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt --break-system-packages
 
-# 复制源代码 (假设你的代码在 src 目录下)
+# 设置工作空间
+WORKDIR /root/ros2_ws
 COPY ./src ./src
 
-# 安装 Python 依赖 (如果有 requirements.txt)
-# COPY requirements.txt .
-# RUN pip3 install -r requirements.txt
+# 编译
+# 注意：Jazzy 的 setup.sh 路径也是一样的模式
+RUN . /opt/ros/jazzy/setup.sh && colcon build
 
-# 解决依赖并编译
-RUN . /opt/ros/humble/setup.sh && \
-    colcon build --symlink-install
-
-# 设置启动命令 (Source 环境)
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+# 设置环境变量
+RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 RUN echo "source /root/ros2_ws/install/setup.bash" >> ~/.bashrc
