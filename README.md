@@ -32,7 +32,7 @@ cd ~/ros2_ws
 colcon build --packages-select mtc
 source install/setup.bash
 
-## Run
+## 5. Run
 Step 1: Launch Environment & MoveIt
 ros2 launch mtc_tutorial mtc_demo.launch.py
 
