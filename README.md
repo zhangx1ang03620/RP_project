@@ -33,7 +33,7 @@ Ensure you have ROS 2 and MoveIt 2 installed.
    ```bash
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
-   # Clone this repository into src
+# Clone this repository into src
    git clone <YOUR_GITHUB_LINK_HERE>
 
 2. Install dependencies:
