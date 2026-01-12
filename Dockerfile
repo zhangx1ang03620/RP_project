@@ -4,7 +4,7 @@ FROM osrf/ros:jazzy-desktop
 # 设置非交互前端
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 安装项目所需的依赖库 (注意：包名里的 humble 都要改成 jazzy)
+# 安装项目所需的依赖库 
 RUN apt-get update && apt-get install -y \
     ros-jazzy-moveit \
     ros-jazzy-moveit-task-constructor-core \
