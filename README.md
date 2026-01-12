@@ -1,6 +1,6 @@
 # Panda Robot Pick-and-Place with MoveIt Task Constructor
 
-**Course:** Robot Programming (Fall 2025)
+**Course:** Robot Programming 
 
 **Team Members:**
 - Member 1: Chen Yuheng(System Modeling & Environment Setup)
@@ -37,20 +37,24 @@ Ensure you have ROS 2 and MoveIt 2 installed.
    git clone <YOUR_GITHUB_LINK_HERE>
 
 2.Install dependencies:
+```bash
 cd ~/ros2_ws
 rosdep update
 rosdep install --from-paths src --ignore-src -y
 
 3.Build the package:
+```bash
 colcon build --packages-select panda_pick_place
 source install/setup.bash
    
   ### Run
   Step 1: Launch Environment & MoveIt
 This launches the fake robot controller, RViz, and the MoveGroup capability:
+```bash
 ros2 launch panda_pick_place mtc_demo.launch.py
 
   Step 2:Execute Pick and Place Task
 Open a new terminal, source the workspace, and run the logic node:
+```bash
 source install/setup.bash
 ros2 launch panda_pick_place demo_pick_and_place.launch.py
