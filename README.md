@@ -18,8 +18,8 @@ The system identifies a cylinder object, plans a collision-free trajectory, pick
 - **Visualization:** Integrated RViz visualization with task solution trails.
 
 ## 3. Technologies
-- **OS:** Ubuntu 22.04 LTS (Jammy Jellyfish)
-- **Middleware:** ROS 2 Humble Hawksbill
+- **OS:** Ubuntu 24.04.3 LTS (Jammy Jellyfish)
+- **Middleware:** ROS 2 Jazzy
 - **Library:** MoveIt 2, MoveIt Task Constructor
 - **Language:** C++ (Core Logic), Python (Launch system)
 
@@ -46,8 +46,8 @@ Ensure you have ROS 2 and MoveIt 2 installed.
 ```bash
 colcon build --packages-select panda_pick_place
 source install/setup.bash
-   
-  ### Run
+
+### Run
   Step 1: Launch Environment & MoveIt
 This launches the fake robot controller, RViz, and the MoveGroup capability:
 ```bash
